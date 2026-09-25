@@ -1,6 +1,6 @@
 import "../../assets/css/Sidebar.css";
 import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { AnimatePresence, motion, type Transition } from 'framer-motion';
 import { useAuthStore } from "../../../hooks/authStore";
 import {
@@ -81,10 +81,18 @@ const optionsMenu = [
 
 export const Sidebar = () => {
   const authStore = useAuthStore();
-  const { store, setStore } = useManagementStore()
+  const { store, setStore } = useManagementStore();
 
   const [collapsed, setCollapse] = useState(true);
   const [logOff, setLogOff] = useState(false);
+
+  const navigate = useNavigate();
+
+  const logout = () => {
+    setLogOff(!logOff);
+    authStore.logout();
+    navigate("/")
+  }
 
   return (
     <div className="container">
@@ -137,7 +145,7 @@ export const Sidebar = () => {
               props={{ disabled: logOff }}
               requested={logOff}
               requestedMsg=" "
-              onClick={() => setLogOff(!logOff)}
+              onClick={logout}
             />
           </div>
         </div>

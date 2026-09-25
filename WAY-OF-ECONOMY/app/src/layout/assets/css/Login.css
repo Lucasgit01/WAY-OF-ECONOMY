@@ -15,8 +15,8 @@
     justify-content: space-between;
     flex-direction: row;
     border-radius: 8px;
-    box-shadow: 4px 4px 4px rgba(196, 26, 40, 0.918);
-    background-color: rgba(204, 18, 65, 0.418);
+    box-shadow: 3px 3px 3px rgba(173, 180, 175, 0.425);
+    background-color: rgba(202, 38, 93, 0.267);
 }
 
 .background-division {

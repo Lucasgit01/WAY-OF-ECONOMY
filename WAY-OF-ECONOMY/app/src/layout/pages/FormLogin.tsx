@@ -63,9 +63,8 @@ export const LoginForm = () => {
                     <img className="top-image" src={escudo} width={100} /><br />
                     {error && <div className="error"><AlertCircle /><p className="msg-error"> {error}</p></div>}
                     <form className="form" onSubmit={handleLogin}>
-                        <legend>Email</legend>
                         <TextInput onChange={(e) => setEmail(e.target.value)} />
-                        <legend>Senha</legend>
+                        <br/>
                         <PswdInput onChange={(e) => setPass(e.target.value)} />
                         <br />
                         <Button
@@ -73,6 +72,7 @@ export const LoginForm = () => {
                             requested={loading!}
                             props={{ disabled: disable }}
                             Icon={LogInIcon}
+
                         />
                         <br />
                     </form>
