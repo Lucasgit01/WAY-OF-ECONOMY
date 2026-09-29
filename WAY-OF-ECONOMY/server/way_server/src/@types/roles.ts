@@ -1,0 +1,1 @@
+export type Roles = "director" | "manager" | "performance manager" | "finance" | "inventory analyst";
